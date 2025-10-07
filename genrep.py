@@ -1,22 +1,24 @@
-# Author: Santiago Bautista
-# Date: 2025-10-07
-print("Ei-24 genrep praktiskt prov HT25")
+print('Ei24 - genrep praktiskt prov HT25')
 
+r_string = input('Ange resistorer: ')
 
-user_input = input("Ange resistorer: ")
+#print(r_string)
 
-if not user_input.strip():
-    print("Serieresistans: 0")
-    print("Parallelresistans: 0")
+if r_string =='':
+    print('Serieresistans: 0')
+    print('Parallelresistans: 0')
 
-else: 
+r_list = r_string.split()
 
-    resistors = [float(r) for r in user_input.split()]
-    r_series = sum(resistors)
-    r_parallel = 1 / sum( 1 / r for r in resistors )
+r_int = []
+for i in r_list:
+    r_int.append(float(i))
 
-    print("Seriesresistans:", r_series)
-    print("Parallelresistans:", r_parallel)
-
-
-
+r_paral = 0
+r_serie =0
+for i in r_int:
+    r_serie = r_serie + i
+    r_paral = r_paral + 1/i
+    
+print(f"Serieresistans:{r_serie}")
+print(f"Parallelresistans:{1/r_paral}")
