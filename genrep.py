@@ -7,7 +7,7 @@ r_string = input('Ange resistorer: ')
 if r_string =='':
     print('Serieresistans: 0')
     print('Parallelresistans: 0')
-
+else:
 r_list = r_string.split()
 
 r_int = []
